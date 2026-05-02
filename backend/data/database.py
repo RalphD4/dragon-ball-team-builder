@@ -1,0 +1,123 @@
+from backend.models import Character, Equipment
+from backend.models.Enums import *
+
+
+#character list
+CHARACTERS = [
+    Character("goku1", "Super Saiyan Goku", (Color.YELLOW,), Character_Rarity.LEGEND, {Tag.SAIYAN, Tag.SON_FAMILY, Tag.SUPER_SAIYAN}, {SpecialBadge.ZENKAI}, Character_Type.MELEE, ""),
+    Character("vegeta1", "Super Saiyan Vegeta", (Color.BLUE,), Character_Rarity.LEGEND, {Tag.SAIYAN, Tag.VEGETA_CLAN, Tag.SUPER_SAIYAN}, {SpecialBadge.ZENKAI}, Character_Type.MELEE, ""),
+    Character("piccolo1", "Ultimate Namekian Piccolo", (Color.GREEN,), Character_Rarity.ULTRA, {Tag.NAMEKIAN, Tag.DRAGON_BALL_SAGA}, set(), Character_Type.DEFENSE, ""),
+    Character("android17", "Android 17", (Color.BLUE,), Character_Rarity.EXTREME, {Tag.ANDROID, Tag.FUTURE}, set(), Character_Type.RANGED, ""),
+    Character("beerus1", "God of Destruction Beerus", (Color.LIGHT,), Character_Rarity.LEGEND, {Tag.GOD_OF_DESTRUCTION}, set(), Character_Type.SUPPORT, ""),
+    Character("bulma1", "Brilliant Bulma", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.GIRLS, Tag.DRAGON_BALL_SAGA}, set(), Character_Type.SUPPORT, ""),
+    Character("kefla1", "Super Saiyan 2 Kefla", (Color.PURPLE,), Character_Rarity.SPARKING, {Tag.UNIVERSE_6, Tag.SUPER_SAIYAN_2, Tag.SAIYAN}, {SpecialBadge.LEGENDS_LIMITED}, Character_Type.MELEE, ""),
+    Character("frieza1", "Golden Frieza", (Color.YELLOW,), Character_Rarity.LEGEND, {Tag.FRIEZA_FORCE, Tag.LINEAGE_OF_EVIL}, set(), Character_Type.MELEE, ""),
+    Character("cell1", "Perfect Cell", (Color.GREEN,), Character_Rarity.ULTRA, {Tag.ANDROID, Tag.CELL_SAGA}, set(), Character_Type.MELEE, ""),
+    Character("buu1", "Majin Buu", (Color.PURPLE,), Character_Rarity.LEGEND, {Tag.MAJIN_BUU_SAGA, Tag.REGENERATION}, set(), Character_Type.DEFENSE, ""),
+    Character("gohan1", "Ultimate Gohan", (Color.YELLOW,), Character_Rarity.SPARKING, {Tag.SAIYAN, Tag.SON_FAMILY, Tag.SUPER_SAIYAN_2}, set(), Character_Type.MELEE, ""),
+    Character("trunks1", "Future Trunks", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.SAIYAN, Tag.FUTURE, Tag.SUPER_SAIYAN}, set(), Character_Type.MELEE, ""),
+    Character("krillin1", "Krillin", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.DRAGON_BALL_SAGA, Tag.GIRLS}, set(), Character_Type.DEFENSE, ""),
+    Character("yamcha1", "Yamcha", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.DRAGON_BALL_SAGA, Tag.WEAPON_WIELDER}, set(), Character_Type.RANGED, ""),
+    Character("tien1", "Tien", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.DRAGON_BALL_SAGA, Tag.TRANSFORMING_WARRIOR}, set(), Character_Type.RANGED, ""),
+    Character("chiaotzu1", "Chiaotzu", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.DRAGON_BALL_SAGA, Tag.KIDS}, set(), Character_Type.SUPPORT, ""),
+    Character("nappa1", "Nappa", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.SAIYAN, Tag.SAIYAN_SAGA}, set(), Character_Type.MELEE, ""),
+    Character("raditz1", "Raditz", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.SAIYAN, Tag.SAIYAN_SAGA}, set(), Character_Type.MELEE, ""),
+    Character("broly1", "Legendary Super Saiyan Broly", (Color.GREEN,), Character_Rarity.LEGEND, {Tag.SAIYAN, Tag.SUPER_SAIYAN}, set(), Character_Type.MELEE, ""),
+    Character("hit1", "Hit", (Color.BLUE,), Character_Rarity.ULTRA, {Tag.UNIVERSE_6}, set(), Character_Type.MELEE, ""),
+    Character("jiren1", "Jiren", (Color.BLUE,), Character_Rarity.LEGEND, {Tag.UNIVERSE_11, Tag.POWERFUL_OPPONENT}, set(), Character_Type.MELEE, ""),
+    Character("toppo1", "Toppo", (Color.BLUE,), Character_Rarity.ULTRA, {Tag.UNIVERSE_11, Tag.GOD_OF_DESTRUCTION}, set(), Character_Type.MELEE, ""),
+    Character("goku_black1", "Goku Black", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.SAIYAN, Tag.FUTURE, Tag.SUPER_SAIYAN_ROSE}, set(), Character_Type.MELEE, ""),
+    Character("zamasu1", "Zamasu", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.ANGEL, Tag.FUTURE}, set(), Character_Type.MELEE, ""),
+    Character("gogeta1", "Super Saiyan Blue Gogeta", (Color.BLUE,), Character_Rarity.LEGEND, {Tag.SAIYAN, Tag.FUSION_WARRIOR, Tag.SUPER_SAIYAN_GOD_SS}, set(), Character_Type.MELEE, ""),
+    Character("vegito1", "Super Saiyan Blue Vegito", (Color.BLUE,), Character_Rarity.LEGEND, {Tag.SAIYAN, Tag.FUSION_WARRIOR, Tag.POTARA, Tag.SUPER_SAIYAN_GOD_SS}, set(), Character_Type.MELEE, ""),
+    Character("goku_gt1", "Super Saiyan 4 Goku GT", (Color.RED,), Character_Rarity.SPARKING, {Tag.SAIYAN, Tag.GT, Tag.SUPER_SAIYAN_4}, set(), Character_Type.MELEE, ""),
+    Character("pan1", "Pan", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.SAIYAN, Tag.SON_FAMILY, Tag.KIDS}, set(), Character_Type.MELEE, ""),
+    Character("bulla1", "Bulla", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.SAIYAN, Tag.VEGETA_CLAN, Tag.GIRLS}, set(), Character_Type.SUPPORT, ""),
+    Character("videl1", "Videl", (Color.BLUE,), Character_Rarity.SPARKING, {Tag.DRAGON_BALL_SAGA, Tag.GIRLS}, set(), Character_Type.MELEE, ""),
+]
+
+
+#equipment list
+EQUIPMENTS = [
+    Equipment("Saiyan Power Armor", Equipment_Rarity.GOLD, EqCondType.TAG, Tag.SAIYAN, ""),
+    Equipment("Namekian Regeneration Device", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.NAMEKIAN, ""),
+    Equipment("Android Energy Core", Equipment_Rarity.UNIQUE_AWAKENED, EqCondType.TAG, Tag.ANDROID, ""),
+    Equipment("God Ki Amplifier", Equipment_Rarity.PLATINUM, EqCondType.TAG, Tag.GODKI, ""),
+    Equipment("Frieza Force Insignia", Equipment_Rarity.GOLD_AWAKENED, EqCondType.TAG, Tag.FRIEZA_FORCE, ""),
+    Equipment("Super Saiyan Aura", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.SUPER_SAIYAN, ""),
+    Equipment("Legendary Saiyan Gear", Equipment_Rarity.PLATINUM, EqCondType.TAG_AND_TAG, {Tag.SAIYAN, Tag.SUPER_SAIYAN}, ""),
+    Equipment("Future Warrior Tech", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.FUTURE, ""),
+    Equipment("Universe 6 Champion Belt", Equipment_Rarity.GOLD, EqCondType.TAG, Tag.UNIVERSE_6, ""),
+    Equipment("Universe 11 Pride", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.UNIVERSE_11, ""),
+    Equipment("Son Family Heirloom", Equipment_Rarity.GOLD_AWAKENED, EqCondType.TAG, Tag.SON_FAMILY, ""),
+    Equipment("Vegeta Clan Crest", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.VEGETA_CLAN, ""),
+    Equipment("Dragon Ball Saga Relic", Equipment_Rarity.GOLD, EqCondType.TAG, Tag.DRAGON_BALL_SAGA, ""),
+    Equipment("Cell Saga Artifact", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.CELL_SAGA, ""),
+    Equipment("Majin Buu Saga Charm", Equipment_Rarity.UNIQUE_AWAKENED, EqCondType.TAG, Tag.MAJIN_BUU_SAGA, ""),
+    Equipment("GT Hero Equipment", Equipment_Rarity.PLATINUM, EqCondType.TAG, Tag.GT, ""),
+    Equipment("Fusion Warrior Synergy", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.FUSION_WARRIOR, ""),
+    Equipment("Potara Earring Replica", Equipment_Rarity.GOLD, EqCondType.TAG, Tag.POTARA, ""),
+    Equipment("Super Saiyan God SS Gear", Equipment_Rarity.PLATINUM, EqCondType.TAG, Tag.SUPER_SAIYAN_GOD_SS, ""),
+    Equipment("Super Saiyan Rose Outfit", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.SUPER_SAIYAN_ROSE, ""),
+    Equipment("Super Saiyan 4 Transformation", Equipment_Rarity.UNIQUE_AWAKENED, EqCondType.TAG, Tag.SUPER_SAIYAN_4, ""),
+    Equipment("Super Saiyan 2 Boost", Equipment_Rarity.GOLD, EqCondType.TAG, Tag.SUPER_SAIYAN_2, ""),
+    Equipment("Weapon Wielder Arsenal", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.WEAPON_WIELDER, ""),
+    Equipment("Transforming Warrior Cape", Equipment_Rarity.GOLD_AWAKENED, EqCondType.TAG, Tag.TRANSFORMING_WARRIOR, ""),
+    Equipment("Regeneration Module", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.REGENERATION, ""),
+    Equipment("Powerful Opponent Badge", Equipment_Rarity.PLATINUM, EqCondType.TAG, Tag.POWERFUL_OPPONENT, ""),
+    Equipment("Lineage of Evil Crown", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.LINEAGE_OF_EVIL, ""),
+    Equipment("Kids Protector Shield", Equipment_Rarity.GOLD, EqCondType.TAG, Tag.KIDS, ""),
+    Equipment("Girls Empowerment Ring", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.GIRLS, ""),
+    Equipment("Angel Halo", Equipment_Rarity.UNIQUE_AWAKENED, EqCondType.TAG, Tag.ANGEL, ""),
+    Equipment("Universe 6 Stealth Gear", Equipment_Rarity.GOLD, EqCondType.TAG, Tag.UNIVERSE_6, ""),
+    Equipment("Saiyan Saga Armor", Equipment_Rarity.UNIQUE, EqCondType.TAG, Tag.SAIYAN_SAGA, ""),
+    Equipment("Melee Master Gloves", Equipment_Rarity.GOLD_AWAKENED, EqCondType.TYPE, Character_Type.MELEE, ""),
+    Equipment("Ranged Expert Bow", Equipment_Rarity.UNIQUE, EqCondType.TYPE, Character_Type.RANGED, ""),
+    Equipment("Defense Fortress", Equipment_Rarity.UNIQUE_AWAKENED, EqCondType.TYPE, Character_Type.DEFENSE, ""),
+    Equipment("Support Healer Staff", Equipment_Rarity.PLATINUM, EqCondType.TYPE, Character_Type.SUPPORT, ""),
+    Equipment("Yellow Energy Crystal", Equipment_Rarity.GOLD, EqCondType.COLOR, Color.YELLOW, ""),
+    Equipment("Blue Power Core", Equipment_Rarity.UNIQUE, EqCondType.COLOR, Color.BLUE, ""),
+    Equipment("Purple Mystic Orb", Equipment_Rarity.UNIQUE_AWAKENED, EqCondType.COLOR, Color.PURPLE, ""),
+    Equipment("Green Nature Essence", Equipment_Rarity.GOLD, EqCondType.COLOR, Color.GREEN, ""),
+    Equipment("Red Fury Amulet", Equipment_Rarity.UNIQUE, EqCondType.COLOR, Color.RED, ""),
+    Equipment("Light Divine Aura", Equipment_Rarity.PLATINUM, EqCondType.COLOR, Color.LIGHT, ""),
+    Equipment("Goku's Signature Gi", Equipment_Rarity.PLATINUM, EqCondType.NAME, "Super Saiyan Goku", ""),
+    Equipment("Vegeta's Pride Armor", Equipment_Rarity.UNIQUE_AWAKENED, EqCondType.NAME, "Super Saiyan Vegeta", ""),
+    Equipment("Piccolo's Weighted Cape", Equipment_Rarity.GOLD, EqCondType.NAME, "Ultimate Namekian Piccolo", ""),
+    Equipment("Android 17's Headband", Equipment_Rarity.UNIQUE, EqCondType.NAME, "Android 17", ""),
+    Equipment("Beerus' Hakama", Equipment_Rarity.PLATINUM, EqCondType.NAME, "God of Destruction Beerus", ""),
+    Equipment("Bulma's Capsule Tech", Equipment_Rarity.UNIQUE, EqCondType.NAME, "Brilliant Bulma", ""),
+    Equipment("Kefla's Saiyan Boots", Equipment_Rarity.GOLD_AWAKENED, EqCondType.NAME, "Super Saiyan 2 Kefla", ""),
+    Equipment("Frieza's Golden Armor", Equipment_Rarity.PLATINUM, EqCondType.NAME, "Golden Frieza", ""),
+    Equipment("Cell's Perfect Form", Equipment_Rarity.UNIQUE_AWAKENED, EqCondType.NAME, "Perfect Cell", ""),
+    Equipment("Buu's Majin Mark", Equipment_Rarity.GOLD, EqCondType.NAME, "Majin Buu", ""),
+]
+
+
+#Current team guides
+TEAM_TAGS = {
+    Tag.ANDROID,
+    Tag.MAJIN_BUU_SAGA,
+    Tag.DAIMA,
+    Tag.DB,
+    Tag.FRIEZA_FORCE,
+    Tag.FUSION_WARRIOR,
+    Tag.FUTURE,
+    Tag.GODKI,
+    Tag.GT,
+    Tag.HYBRID_SAIYAN,
+    Tag.LINEAGE_OF_EVIL,
+    Tag.SAGAS_FROM_THE_MOVIES,
+    Tag.POWERFUL_OPPONENT,
+    Tag.REGENERATION,
+    Tag.SAIYAN,
+    Tag.SAIYAN_SAGA,
+    Tag.SON_FAMILY,
+    Tag.UNIVERSE_REP,
+    Tag.VEGETA_CLAN
+}
+
+
+
+
+
