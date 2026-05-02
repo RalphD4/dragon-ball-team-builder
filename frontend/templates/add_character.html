@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> character addition </title>
+</head>
+<body>
+
+    <form method="POST" enctype="multipart/form-data">
+        <!--name-->
+        <div class="form-row">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <!--id-->
+        <div class="form-row">
+            <label for="char_id">Character id:</label>
+            <input type="text" id="char_id" name="id" required>
+        </div>
+
+        <!--color 1-->
+        <div class="form-row">
+            <label for="color1">Primary Color:</label>
+            <select id="color1" name="color1" required>
+                <option value="">--Select--</option>
+                <option value="RED">RED</option>
+                <option value="GREEN">GREEN</option>
+                <option value="YELLOW">YELLOW</option>
+                <option value="BLUE">BLUE</option>
+                <option value="PURPLE">PURPLE</option>
+                <option value="LIGHT">LIGHT</option>
+            </select>
+        </div>
+
+        <!--color 1-->
+        <div class="form-row">
+            <label for="color2">Secondary Color (optional):</label>
+            <select id="color2" name="color2" >
+                <option value="">--None--</option>
+                <option value="RED">RED</option>
+                <option value="GREEN">GREEN</option>
+                <option value="YELLOW">YELLOW</option>
+                <option value="BLUE">BLUE</option>
+                <option value="PURPLE">PURPLE</option>
+                <option value="LIGHT">LIGHT</option>
+            </select>
+        </div>
+
+        <!--rarity-->
+        <div class="form-row">
+            <label for="rarity">Rarity:</label>
+            <select id="rarity" name="rarity" required>
+                <option value="">--Select--</option>
+                <option value="LR">LR</option>
+                <option value="UL">UL</option>
+                <option value="SP">SP</option>
+            </select>
+        </div>
+
+        <!--Legends Limited-->
+        <div class="form-row">
+            <label for="legends-limited">
+            Legends-Limited
+            <input type="checkbox" name="is-ll">
+            </label>
+        </div>
+
+        <!--Zenkai-->
+        <div class="form-row">
+            <label for="zenkai">
+            Zenkai
+            <input type="checkbox" name="is-zenkai">
+            </label>
+        </div>
+
+
+        <!--Image upload-->
+        <div class="form-row">
+            <label for="character_img">Character Image:</label>
+            <input type="file" id="character_img" name="character_img" accept="image/*" required>
+        </div>
+
+        <!--Tags-->
+        <div class="form-row">
+            <label for="char_tags">Tags:</label>
+        </div>
+
+        <button type="submit">Save</button>
+
+    </form>
+
+</body>
+</html>
+
+
+
