@@ -37,6 +37,8 @@ This project is designed to help build optimized teams by organizing characters 
 - Jinja variable injection into templates
 - Flask routing and template rendering
 - Debugging frontend/backend communication
+- Object Oriented backend design
+- Responsive UI
 
 ## Author
 Ralph Enzo Djantio Tchaya
