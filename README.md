@@ -3,7 +3,7 @@
 Full-stack web application built with Python and Flask to generate team compositions based on character attributes.
 
 ## Overview
-This project is designed to help players build optimized teams by organizing characters based on tags, roles, rarity, and other attributes. The application provides a structured interface for selecting and visualizing team compositions.
+This project is designed to help build optimized teams by organizing characters based on tags, roles, rarity, and other attributes. The application provides a structured interface for selecting and visualizing team compositions.
 
 ## Features
 - Dynamic frontend built with JavaScript and Flask templates
@@ -13,12 +13,14 @@ This project is designed to help players build optimized teams by organizing cha
 - Scalable design for future database integration (PostgreSQL / Supabase)
 
 ## Current Status
-🚧 In Progress  
-- Core UI and page structure implemented  
-- Backend routes connected to frontend  
-- Currently developing:
-  - Role-based authentication and authorization
-  - Dynamic character data loading
+- Implemented  
+  - Team, Character, Equipment rendering 
+  - Team editor interface
+  - Backend/Frontend route integration and security
+  - Admin functionality for managing content 
+- Planned:
+  - Equipment addition
+  - Auth improvements
   - Database integration for persistent storage
 
 ## Tech Stack
@@ -27,6 +29,14 @@ This project is designed to help players build optimized teams by organizing cha
 - JavaScript, HTML, CSS
 - PostgreSQL (planned)
 - Supabase (planned)
+
+## What I learned
+- Frontend/Backend integration
+- API routing and data handling
+- Error handling and HTTP status codes
+- Jinja variable injection into templates
+- Flask routing and template rendering
+- Debugging frontend/backend communication
 
 ## Author
 Ralph Enzo Djantio Tchaya
